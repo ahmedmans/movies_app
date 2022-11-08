@@ -7,7 +7,7 @@ class MovieModel extends Movie {
     required super.backdropPath,
     required super.overview,
     required super.genreIds,
-    //  required super.voteAverage,
+    required super.voteAverage,
     required super.releaseDate,
   });
 
@@ -17,7 +17,7 @@ class MovieModel extends Movie {
         backdropPath: json["backdrop_path"],
         overview: json["overview"],
         genreIds: List<int>.from(json["genre_ids"].map((e) => e)),
-        // voteAverage: json["vote_average"],
+        voteAverage: json["vote_average"],
         releaseDate: json["release_date"],
       );
 }

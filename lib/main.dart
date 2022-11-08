@@ -14,8 +14,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Movies App',
-      home: MoviesScreen(),
+      home: TestPage(),
+    );
+  }
+}
+
+class TestPage extends StatelessWidget {
+  const TestPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: TextButton(
+          child: Text('Next'),
+          onPressed: () => Navigator.push(
+              context, MaterialPageRoute(builder: (_) => MainMoviesScreen())),
+        ),
+      ),
     );
   }
 }

@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 import 'package:movies_app/core/error/excpetions.dart';
 import 'package:movies_app/core/helper/my_dio_client.dart';
 import 'package:movies_app/core/network/api_constance.dart';
@@ -23,10 +22,6 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
       final data = List<MovieModel>.from((response.data["results"] as List)
           .map((e) => MovieModel.fromjson(e)));
 
-      if (kDebugMode) {
-        print(data);
-      }
-
       return data;
     } else {
       throw ServerException(
@@ -42,10 +37,6 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
       final data = List<MovieModel>.from((response.data["results"] as List)
           .map((e) => MovieModel.fromjson(e)));
 
-      if (kDebugMode) {
-        print(data);
-      }
-
       return data;
     } else {
       throw ServerException(
@@ -60,10 +51,6 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
     if (response.statusCode == 200) {
       final data = List<MovieModel>.from((response.data["results"] as List)
           .map((e) => MovieModel.fromjson(e)));
-
-      if (kDebugMode) {
-        print(data);
-      }
 
       return data;
     } else {
